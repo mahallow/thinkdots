@@ -181,7 +181,7 @@ myScratchpads = [ NS "terminal" spawnTerm findTerm manageTerm
 ------------------------------------------------------------------------
 
 main = do
-    xmproc0 <- spawnPipe "xmobar -x 0 /home/liam/.config/xmobar/xmobarrc"
+    xmproc0 <- spawnPipe "xmobar -x 0 ~/.xmonad/xmobar/xmobarrc"
     xmproc1 <- spawnPipe "/usr/local/bin/xmobar -x 1 /home/djwilcox/.config/xmobar/xmobarrc"
     xmonad $ withUrgencyHook LibNotifyUrgencyHook $ ewmh desktopConfig
         { manageHook = manageDocks <+> myManageHook <+> manageHook desktopConfig
