@@ -11,10 +11,10 @@ position = TopW L 100,
 -- presentation in the bar.
 commands = [
 	-- Gather and format CPU usage information.
-	-- If it's above 50%, we consider it high usage and make it red.
+	-- If it's above 70%, we consider it high usage and make it red.
 	Run Cpu [
 	"-L", "3",
-	"-H", "50",
+	"-H", "70",
 	"--normal", "green",
 	"--high","red"
 	]
@@ -32,7 +32,7 @@ commands = [
 
 	-- Date formatting
 	--Run Date "%k:%M:%S" "date" 10,
-	Run DateZone "%a %d %b %Y - %H:%M:%S" "fr_FR.UTF-8" "UTC" "date" 10,
+	Run DateZone "%a %d %b %Y - %H:%M:%S" "us_EN.UTF-8" "UTC" "date" 10,
 
 	-- Battery information. This is likely to require some customization
 	-- based upon your specific hardware. Or, for a desktop you may want
@@ -45,16 +45,18 @@ commands = [
 	"-o", "Bat",
 	"-h", "green",
 	"-l", "red"
-	] 10,
+	] 100,
 	-- To get volume information, we run a custom bash script.
 	-- This is because the built-in volume support in xmobar is disabled
 	-- in Debian and derivatives like Ubuntu.
 	--Run Com "~/bin/get-volume.sh" [] "myvolume" 10,
 	-- /!\ https://github.com/jaor/xmobar/issues/127
-	Run Com "/bin/bash" ["-c", "~/.xmonad/get-volume.sh"]  "myvolume" 1,
+	--Run Com "/bin/bash" ["-c", "~/.xmonad/get-volume.sh"]  "myvolume" 1,
+	Run Com "amixer" ["-R | grep 'Front Left: Playback'" ]  "myvolume" 1,
 
 
-	Run Com "/bin/bash" ["-c", "echo `xbacklight -get | grep -oE '^.[0-9]{0,3}'`%"]  "mybright" 1,
+	--Run Com "/bin/bash" ["-c", "echo `xbacklight -get | grep -oE '^.[0-9]{0,3}'`%"]  "mybright" 1,
+	Run Com "brightnessctl" ["-d", "intel_backlight", "g"]  "mybright" 600,
 	--Run Com "~/bin/get-volume.sh" [] "vol",
 	--Run Weather "KNYC" ["-t", "KNYC: <tempC>C/<skyCondition>"] 36000,
 	-- This line tells xmobar to read input from stdin. That's how we
