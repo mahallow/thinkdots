@@ -151,6 +151,7 @@ myKeys =
      , ("M-g", sendMessage $ JumpToLayout "Grid")
      , ("M-b", sendMessage $ JumpToLayout "BSP")
      , ("M-,", spawn "rofi -show drun") -- rofi
+     , ("M-S-l", spawn "i3lock -c 111111") -- rofi
      , ("<XF86MonBrightnessUp>", spawn "brightnessctl -d intel_backlight set +300") -- rofi
      , ("<XF86MonBrightnessDown>", spawn "brightnessctl -d intel_backlight set 300-") -- rofi
      , ("<XF86AudioLowerVolume>", spawn "amixer set Master 5%- unmute") -- rofi
