@@ -1,0 +1,90 @@
+
+xmonad.hs:175:14: error:
+    • Couldn't match expected type ‘XConfig l0’
+                  with actual type ‘XConfig l1 -> XConfig l1’
+    • In the second argument of ‘($)’, namely
+        ‘withUrgencyHook
+           $ ewmh
+               desktopConfig
+                 {manageHook = manageDocks <+> myManageHook
+                                 <+> manageHook desktopConfig,
+                  startupHook = myStartupHook, layoutHook = myLayout,
+                  handleEventHook = handleEventHook desktopConfig,
+                  workspaces = myWorkspaces, borderWidth = myBorderWidth,
+                  terminal = myTerminal, modMask = myModMask,
+                  normalBorderColor = myNormalBorderColor,
+                  focusedBorderColor = myFocusedBorderColor,
+                  logHook = dynamicLogWithPP
+                              xmobarPP
+                                {ppOutput = \ x -> hPutStrLn xmproc0 x >> hPutStrLn xmproc1 x,
+                                 ppCurrent = xmobarColor myppCurrent "" . wrap "[" "]",
+                                 ppVisible = xmobarColor myppVisible "",
+                                 ppHidden = xmobarColor myppHidden "" . wrap "+" "",
+                                 ppHiddenNoWindows = xmobarColor myppHiddenNoWindows "",
+                                 ppTitle = xmobarColor myppTitle "" . shorten 80,
+                                 ppSep = "<fc=#586E75> | </fc>",
+                                 ppUrgent = xmobarColor myppUrgent "" . wrap "!" "!",
+                                 ppExtras = [windowCount],
+                                 ppOrder = \ (ws : l : t : ex) -> [...] ++ ex ++ [...]}
+                              >> updatePointer (0.25, 0.25) (0.25, 0.25)}
+               `additionalKeysP` myKeys’
+      In a stmt of a 'do' block:
+        xmonad
+          $ withUrgencyHook
+              $ ewmh
+                  desktopConfig
+                    {manageHook = manageDocks <+> myManageHook
+                                    <+> manageHook desktopConfig,
+                     startupHook = myStartupHook, layoutHook = myLayout,
+                     handleEventHook = handleEventHook desktopConfig,
+                     workspaces = myWorkspaces, borderWidth = myBorderWidth,
+                     terminal = myTerminal, modMask = myModMask,
+                     normalBorderColor = myNormalBorderColor,
+                     focusedBorderColor = myFocusedBorderColor,
+                     logHook = dynamicLogWithPP
+                                 xmobarPP
+                                   {ppOutput = \ x -> hPutStrLn xmproc0 x >> hPutStrLn xmproc1 x,
+                                    ppCurrent = xmobarColor myppCurrent "" . wrap "[" "]",
+                                    ppVisible = xmobarColor myppVisible "",
+                                    ppHidden = xmobarColor myppHidden "" . wrap "+" "",
+                                    ppHiddenNoWindows = xmobarColor myppHiddenNoWindows "",
+                                    ppTitle = xmobarColor myppTitle "" . shorten 80,
+                                    ppSep = "<fc=#586E75> | </fc>",
+                                    ppUrgent = xmobarColor myppUrgent "" . wrap "!" "!",
+                                    ppExtras = [windowCount],
+                                    ppOrder = \ (ws : l : t : ex) -> [...] ++ ex ++ [...]}
+                                 >> updatePointer (0.25, 0.25) (0.25, 0.25)}
+                  `additionalKeysP` myKeys
+      In the expression:
+        do xmproc0 <- spawnPipe
+                        "xmobar -x 0 /home/liam/.config/xmobar/xmobarrc"
+           xmproc1 <- spawnPipe
+                        "/usr/local/bin/xmobar -x 1 /home/djwilcox/.config/xmobar/xmobarrc"
+           xmonad
+             $ withUrgencyHook
+                 $ ewmh
+                     desktopConfig
+                       {manageHook = manageDocks <+> myManageHook
+                                       <+> manageHook desktopConfig,
+                        startupHook = myStartupHook, layoutHook = myLayout,
+                        handleEventHook = handleEventHook desktopConfig,
+                        workspaces = myWorkspaces, borderWidth = myBorderWidth,
+                        terminal = myTerminal, modMask = myModMask,
+                        normalBorderColor = myNormalBorderColor,
+                        focusedBorderColor = myFocusedBorderColor,
+                        logHook = dynamicLogWithPP
+                                    xmobarPP
+                                      {ppOutput = \ x -> ...,
+                                       ppCurrent = xmobarColor myppCurrent "" . wrap "[" "]",
+                                       ppVisible = xmobarColor myppVisible "",
+                                       ppHidden = xmobarColor myppHidden "" . wrap "+" "",
+                                       ppHiddenNoWindows = xmobarColor myppHiddenNoWindows "",
+                                       ppTitle = xmobarColor myppTitle "" . shorten 80,
+                                       ppSep = "<fc=#586E75> | </fc>",
+                                       ppUrgent = xmobarColor myppUrgent "" . wrap "!" "!",
+                                       ppExtras = [...], ppOrder = \ (ws : l : t : ex) -> ...}
+                                    >> updatePointer (0.25, 0.25) (0.25, 0.25)}
+                     `additionalKeysP` myKeys
+    |
+175 |     xmonad $ withUrgencyHook $ ewmh desktopConfig
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...

@@ -1,0 +1,82 @@
+configuration {
+  display-window: "";
+	window-format: " {w} | {n}";
+  font: "JetBrains Mono 10";
+	fake-transparency: false;
+	hide-scrollbar: true;
+	bw: 0;
+  fullscreen: true;
+  show-icons: true;
+	terminal: "st";
+	sidebar-mode: true;
+}
+
+* {
+  text-color: #d1d5da;
+  background-color: rgba(0,0,0,0);
+  font: "JetBrains Mono 10";
+}
+
+window {}
+
+mainbox {
+  children: [ inputbar, listview ];
+  margin: 24% 40% 56% 40%;
+  background-color: #050506;
+  border-radius: 6;
+  border: 2;
+  border-color: #272c31;
+}
+
+listview {
+  columns: 1;
+  layout: vertical;
+  padding: 8;
+  spacing: 0;
+}
+
+element {
+  background-color: #050506;
+  border: 2;
+  border-color: #050506;
+  text-color: #d1d5da;
+  orientation: vertical;
+  padding: 8 12 8 12;
+  border-radius: 6;
+}
+
+element selected {
+  background-color: #180b15;
+  border-color: #5e0046;
+  text-color: #f7a2e1;
+  transition: 20;
+}
+
+element-icon {
+  size: 32;
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+}
+
+element-text {
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+  text-color: inherit;
+}
+
+inputbar {
+	children: [entry];
+  border: 0 0 1 0;
+  border-color: #272c31;
+  placeholder: "we";
+}
+
+prompt {
+  enabled: false;
+}
+
+entry {
+  background-color: #070709;
+  text-color: #d1d5da;
+  padding: 12;
+}

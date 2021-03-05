@@ -1,0 +1,13 @@
+rofi.combi-modi: window,run,drun,ssh
+rofi.font: JetBrains Mono 10
+rofi.modi: combi,drun
+rofi.show-icons: true
+rofi.icon-theme: Papirus-Dark
+rofi.lines: 5
+rofi.eh: 1
+rofi.line-margin: 0
+rofi.bw: 0
+rofi.dpi: 96
+rofi.separator-style: none
+rofi.auto-select: false
+rofi.color-enabled: true

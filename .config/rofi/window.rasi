@@ -1,0 +1,81 @@
+configuration {
+  display-window: "";
+	window-format: " {w} | {n}";
+  font: "JetBrains Mono 10";
+	fake-transparency: false;
+	hide-scrollbar: true;
+	bw: 0;
+  fullscreen: true;
+  show-icons: true;
+	terminal: "st";
+	sidebar-mode: true;
+}
+
+* {
+  background-color: rgba(0,0,0,0);
+  font: "Iosevka Term bold 10";
+}
+
+window {
+  transparency: "real";
+  fullscreen: true;
+}
+
+mainbox {
+  background-color: #000000;
+  border-radius: 12;
+  border: 2;
+  border-color: #ffffff0A;
+  margin: 28% 40% 50% 40%;
+}
+
+listview {
+	columns: 1;
+  padding: 8;
+  spacing: 0;
+}
+
+element {
+  border: 1;
+  text-color: #bdc3c3;
+	orientation: vertical;
+  padding: 8 12 8 12;
+  border-radius: 6;
+}
+
+element selected {
+  background-color: #869fa214;
+  border-color: #ffffff0A;
+  text-color: #869fa2;
+  transition: 20;
+}
+
+element-icon {
+	size: 60;
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+}
+
+element-icon {
+  size: 40;
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+}
+
+element-text {
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+  text-color: inherit;
+}
+
+inputbar {
+  enabled: false;
+}
+
+prompt {
+  enabled: false;
+}
+
+entry {
+  enabled: false;
+}
