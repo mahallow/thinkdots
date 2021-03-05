@@ -71,6 +71,6 @@ alignSep = "}{",
 
 -- Overall template for the layout of the xmobar contents. Note that
 -- space is significant and can be used to add padding.
-template = "%StdinReader% }{ %enp0s31f6%%wlp58s0% | %battery% | %cpu% | %memory% | %myvolume% | Lum: %mybright% | <fc=#e6744c>%date%</fc>"
+template = "| %StdinReader% }{ %enp0s31f6%%wlp58s0% | %battery% | %cpu% | %memory% | %myvolume% | Lum: %mybright% | <fc=#e6744c>%date%</fc> | "
 }
 
