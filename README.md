@@ -6,7 +6,7 @@ Hello and welcome! Here you are looking at the probably poorly formatted readme 
 
 This is some XMonad on some ThinkPad. 
 
-![xmonad](https://github.com/mahallow/thinkdots/blob/master/scrots/screen1.png) 
+![xmonad](https://raw.githubusercontent.com/mahallow/thinkdots/master/scrots/screen1.png) 
 
 And here is the AwesomeWM config
 
