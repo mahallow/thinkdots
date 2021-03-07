@@ -90,9 +90,9 @@ myStartupHook = do
 myLayout = avoidStruts (tiled ||| grid ||| bsp)
   where
      -- full
-     --full = renamed [Replace "Full"] 
-      --     $ spacingRaw True (Border 10 0 10 0) True (Border 0 10 0 10) True 
-          -- $ noBorders (Full)
+     full = renamed [Replace "Full"] 
+          $ spacingRaw True (Border 10 0 10 0) True (Border 0 10 0 10) True 
+          $ noBorders (Full)
 
      -- tiled
      tiled = renamed [Replace "Tall"] 
@@ -125,7 +125,7 @@ myLayout = avoidStruts (tiled ||| grid ||| bsp)
 myManageHook = composeAll
     [ className =? "mpv"            --> doRectFloat (W.RationalRect (1 % 4) (1 % 4) (1 % 2) (1 % 2))
     , className =? "Gimp"           --> doFloat
-    , className =? "nitrogen"           --> doFloat
+    , className =? "nitrogen"       --> doFloat
     , className =? "Firefox" <&&> resource =? "Toolkit" --> doFloat -- firefox pip
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore 
@@ -182,7 +182,7 @@ myScratchpads = [ NS "terminal" spawnTerm findTerm manageTerm
 
 main = do
     xmproc0 <- spawnPipe "xmobar -x 0 ~/.xmonad/xmobar/xmobarrc"
-    xmproc1 <- spawnPipe "/usr/local/bin/xmobar -x 1 /home/djwilcox/.config/xmobar/xmobarrc"
+    xmproc1 <- spawnPipe "/usr/local/bin/xmobar -x 1 ~/.xmonad/xmobar/xmobarrc"
     xmonad $ withUrgencyHook LibNotifyUrgencyHook $ ewmh desktopConfig
         { manageHook = manageDocks <+> myManageHook <+> manageHook desktopConfig
         , startupHook        = myStartupHook

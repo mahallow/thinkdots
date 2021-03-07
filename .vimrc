@@ -1,18 +1,18 @@
 set number relativenumber
-
+set nocompatible
 
 call plug#begin('~/.vim/plugged')
-
-
-Plug 'https://github.com/itchyny/lightline.vim.git'
-Plug 'rafi/awesome-vim-colorschemes'
-Plug 'junegunn/vim-easy-align'
-Plug 'frazrepo/vim-rainbow'
-Plug 'jiangmiao/auto-pairs'
-Plug 'preservim/nerdtree'
-Plug 'preservim/nerdtree'
-
-
+  
+  
+Plug 'https://github.com/itchyny/lightline.vim.git' 
+Plug 'rafi/awesome-vim-colorschemes' 
+Plug 'junegunn/vim-easy-align' 
+Plug 'frazrepo/vim-rainbow' 
+Plug 'jiangmiao/auto-pairs' 
+Plug 'preservim/nerdtree' 
+Plug 'preservim/nerdtree' 
+Plug 'mg979/vim-visual-multi', {'branch': 'master'} 
+ 
 call plug#end()
 set paste
 set splitbelow splitright
