@@ -1,8 +1,11 @@
 set number relativenumber
 set nocompatible
+set t_Co=256
+set paste
+set mouse=a
+set splitbelow splitright
 
 call plug#begin('~/.vim/plugged')
-  
   
 Plug 'https://github.com/itchyny/lightline.vim.git' 
 Plug 'rafi/awesome-vim-colorschemes' 
@@ -10,12 +13,11 @@ Plug 'junegunn/vim-easy-align'
 Plug 'frazrepo/vim-rainbow' 
 Plug 'jiangmiao/auto-pairs' 
 Plug 'preservim/nerdtree' 
-Plug 'preservim/nerdtree' 
+Plug 'preservim/nerdtree' black
 Plug 'mg979/vim-visual-multi', {'branch': 'master'} 
  
 call plug#end()
-set paste
-set splitbelow splitright
+
 set laststatus=2
 let g:lightline = {
       \ 'colorscheme': 'wombat',
