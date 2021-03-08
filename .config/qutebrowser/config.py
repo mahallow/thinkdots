@@ -30,6 +30,8 @@ base0D = "#7cafc2"
 base0E = "#ba8baf"
 base0F = "#a16946"
 
+# set darkmode possibly?
+config.set("colors.webpage.darkmode.enabled", True)
 # set qutebrowser colors
 
 # Text color of the completion widget. May be a single color to use for
