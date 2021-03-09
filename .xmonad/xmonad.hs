@@ -40,6 +40,7 @@ import XMonad.Actions.UpdatePointer -- update mouse postion
 import XMonad.Layout.Renamed (renamed, Rename(Replace))
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spacing
+import XMonad.Layout.Tabbed
 import XMonad.Layout.GridVariants
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.BinarySpacePartition
@@ -49,7 +50,7 @@ import XMonad.Layout.Gaps
 -- variables
 ------------------------------------------------------------------------
 --myGaps = gaps [(U, gap),(D, gap),(L, gap),(R, gap)]
-myModMask = mod3Mask -- Sets modkey to super/windows key
+myModMask = mod4Mask -- Sets modkey to super/windows key
 myTerminal = "kitty" -- Sets default terminal
 myBorderWidth = 1 -- Sets border width for windows
 myNormalBorderColor = "#839496"
@@ -60,7 +61,7 @@ myppHidden = "#268bd2"
 myppHiddenNoWindows = "#93A1A1"
 myppTitle = "#FDF6E3"
 myppUrgent = "#DC322F"
-myWorkspaces = ["1","2","3","4","5","6","7","8","9"]
+myWorkspaces = ["web","dev","set","doc","vim","sil","test", "com", "fin"]
 windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
 
 ------------------------------------------------------------------------
@@ -88,7 +89,7 @@ myStartupHook = do
 -- layout
 ------------------------------------------------------------------------
 
-myLayout = avoidStruts (tiled ||| grid ||| bsp)
+myLayout = avoidStruts (tiled ||| grid ||| bsp ||| simpleTabbed) 
   where
      -- full
      full = renamed [Replace "Full"] 
@@ -131,7 +132,7 @@ myManageHook = composeAll
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore 
     , isFullscreen --> doFullFloat
-    ] <+> namedScratchpadManageHook myScratchpads
+    ]
     
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -161,25 +162,8 @@ myKeys =
      , ("<XF86AudioLowerVolume>", spawn "amixer set Master 5%- unmute") -- rofi
      , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 5%+ unmute") -- rofi
      , ("S-M-t", withFocused $ windows . W.sink) -- flatten floating window to tiled
-     , ("M-C-<Space>", namedScratchpadAction myScratchpads "terminal")
     ]
     
-------------------------------------------------------------------------
--- scratchpads
-------------------------------------------------------------------------
-
-myScratchpads = [ NS "terminal" spawnTerm findTerm manageTerm
-              , NS "emacs-scratch" spawnEmacsScratch findEmacsScratch manageEmacsScratch
-                ] 
-    where
-    role = stringProperty "WM_WINDOW_ROLE"
-    spawnTerm = myTerminal ++  " -name scratchpad"
-    findTerm = resource =? "scratchpad"
-    manageTerm = nonFloating
-    findEmacsScratch = title =? "emacs-scratch"
-    spawnEmacsScratch = "emacsclient -a='' -nc --frame-parameters='(quote (name . \"emacs-scratch\"))'"
-    manageEmacsScratch = nonFloating
-
 ------------------------------------------------------------------------
 -- main
 ------------------------------------------------------------------------
