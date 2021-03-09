@@ -49,7 +49,7 @@ import XMonad.Layout.Gaps
 -- variables
 ------------------------------------------------------------------------
 --myGaps = gaps [(U, gap),(D, gap),(L, gap),(R, gap)]
-myModMask = mod4Mask -- Sets modkey to super/windows key
+myModMask = mod3Mask -- Sets modkey to super/windows key
 myTerminal = "kitty" -- Sets default terminal
 myBorderWidth = 1 -- Sets border width for windows
 myNormalBorderColor = "#839496"
@@ -82,6 +82,7 @@ instance UrgencyHook LibNotifyUrgencyHook where
 
 myStartupHook = do
       spawnOnce "nitrogen --restore &" 
+      spawnOnce "xmodmap ~/.Xmodmap" 
 
 ------------------------------------------------------------------------
 -- layout
@@ -151,6 +152,9 @@ myKeys =
      , ("M-g", sendMessage $ JumpToLayout "Grid")
      , ("M-b", sendMessage $ JumpToLayout "BSP")
      , ("M-,", spawn "rofi -show drun") -- rofi
+     , ("M-k", spawn "kitty") -- rofi
+     , ("M-u", spawn "kitty vifm") -- rofi
+     , ("M-o", spawn "qutebrowser") -- rofi
      , ("M-S-l", spawn "i3lock-fancy-rapid 8 3") -- lockscreen
      , ("<XF86MonBrightnessUp>", spawn "brightnessctl -d intel_backlight set +300") -- rofi
      , ("<XF86MonBrightnessDown>", spawn "brightnessctl -d intel_backlight set 300-") -- rofi

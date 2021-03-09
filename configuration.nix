@@ -11,7 +11,7 @@
   boot.loader.grub.device = "/dev/nvme0n1"; # or "nodev" for efi only
   
   # Networking 
-  networking.hostName = "liam-t470s"; # Define your hostname.
+  networking.hostName = "tpad"; # Define your hostname.
   networking.useDHCP = false;
   networking.networkmanager.enable = true;
   networking.interfaces.enp0s31f6.useDHCP = true;
@@ -88,7 +88,7 @@
     services.picom = {
        enable = true;
        fade = true; 
-       inactiveOpacity = 0.9;
+       #inactiveOpacity = 1;
        shadow = true;
        fadeDelta = 1; 
        vSync = true;
@@ -99,6 +99,8 @@
 	wayland = false;
 	};
 
+
+
   # Enable XMonad
     services.xserver.windowManager.xmonad = {
 	enable = true;
@@ -108,7 +110,6 @@
 	  hpkgs.xmonad-extras
 	  ];
       };
-
 
   # Set Fish as shell
    programs.fish.enable = true;
@@ -126,9 +127,11 @@
     autorandr
     pkgs.lxappearance
     xmobar
+    nitrogen
    # System Applications
     pkgs.kitty
     pkgs.python39
+    xorg.xmodmap
     gotop
     pkgs.arandr
     pciutils
