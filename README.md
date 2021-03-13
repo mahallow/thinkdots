@@ -1,8 +1,8 @@
 # NixOS Dotfiles
 
-Hello and welcome! Here you are looking at the probably poorly formatted readme for the dotfiles I use and tweak essentially daily. I will add more install instructions as this becomes more set in stone, but for now just know that you can use these if you want to replicate my work in progress XMonad setup or my 5 year old perfection that is the AwesomeWM dots. 
+You have just funbled your config, tried to ```sudo pacman -Rns``` some font you weren't using, and you removed font manager, its time again to begin the Arch inst.... STOP! There is another way! If you're here, you are one for dotfiles. You might not think so, but I can see it in you. What if I told you, you could essentially dotfile your machine, with the continual ability to switch between changes on the fly.  
 
-## Screeshots
+In steps [NixOS](www.nixos.org) to solve your problems. The "do it yourself" distro for grownups. 
 
 This is some XMonad on some ThinkPad. 
 
@@ -10,16 +10,18 @@ This is some XMonad on some ThinkPad.
 
 # Installation & Details
 
-This is where things need to be improved. 
+This is where things need to be improved. You can of course still copy or use these configs, though the instal process is pretty diy. 
 
-1. Come up with an easy install method for replicating this without manually doing everything
-2. Fix wierd things XMonad is doing for reasons unclear to me 
-3. Get more wild with things in the status bar.
-4. Find out how to script so one can do a simple ```./setup.sh``` or something when in this folder and everything will move to the correct spots. 
+1. ```sudo dd if=/dev/null of=/dev/sda``` your machine
+2. Download NixOS and make a bootable USB. Feel free to use the Gnome version or whatever, what is actually installed is based entirely off of what is in ```/etc/nixos/configuration.nix```
+3. ```git clone https://github.com/mahallow/thinkdots.git``` in the home directory or wherever on the live instance of Nix you'ure running
+4. Go through the NixOS manual on partitioning, formatting, mounting, then creating the default configuration
+5. Open up both the default configuration and the one from the git repo
+6. Change the name of the drive and wifi and ethernet cards in the configuration from the repo to match that which were auto generated. Also change your username unless you're also a Liam
+7. Delete default config, place new one in same folder.
+8. ```nixos-install```
 
-## AwesomeWM
-
-I have decided to take the AwesomeWM dots out of this repoistory as they have been around a long time and are sort of now spread across, in different degrees of *up-to-date-ness* around on GitHub and I think that my learning of how to organize these things has improved along with the dotfiles. As I am now going to use XMonad for a while, the dots will stay the same for AwesomeWM and can be cloned at ```https://github.com/ubuntu9786/4k_config.git``` and here I am going to keep the non 4k XMonad config files. As these always evolve over time, I often found myself overwriting things in unrelated configs and so I am now going to keep them separate. 
+At this point you will have a functional install! To get anything to look normal though, once you reboot you will want to clone the repo again and put everything in your ```~/.home``` folder. Logout, back in and bam. 
 
 
 Thats it for now!
