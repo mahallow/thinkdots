@@ -14,6 +14,7 @@
   networking.hostName = "tpad"; # Define your hostname.
   networking.useDHCP = false;
   networking.networkmanager.enable = true;
+  networking.networkmanager.wifi.powersave = true;
   networking.interfaces.enp0s31f6.useDHCP = true;
   networking.interfaces.wlp58s0.useDHCP = true;
 
@@ -37,7 +38,11 @@
   powerManagement.powertop.enable = true;
   services.tlp.enable = true;
   services.thermald.enable = true; 
-  
+  services.undervolt = {
+	enable = true;
+ 	coreOffset = -50; 
+	};
+
  # Splash screen
   boot.plymouth.enable = true;
   boot.plymouth.theme = "breeze";
