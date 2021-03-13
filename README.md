@@ -6,12 +6,7 @@ Hello and welcome! Here you are looking at the probably poorly formatted readme 
 
 This is some XMonad on some ThinkPad. 
 
-![xmonad](https://raw.githubusercontent.com/mahallow/thinkdots/master/scrots/screen1.png) 
-
-And here is the AwesomeWM config
-
-![awesomewm](https://raw.githubusercontent.com/ubuntu9786/4k_config/main/screens/screen3.png)
-I am keeping this here for historical purposes or for people who want to download the repo with the AwesomeWM dots but found this instead. 
+![xmonad](https://raw.githubusercontent.com/mahallow/thinkdots/master/scrots/screen2.png) 
 
 # Installation & Details
 
