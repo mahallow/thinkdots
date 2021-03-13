@@ -10,7 +10,7 @@ This is some XMonad on some ThinkPad.
 
 # Installation & Details
 
-This is where things need to be improved. You can of course still copy or use these configs, though the instal process is pretty diy. 
+This is where things need to be improved. You can of course still copy or use these configs, though the install process is pretty diy. 
 
 1. ```sudo dd if=/dev/null of=/dev/sda``` your machine
 2. Download NixOS and make a bootable USB. Feel free to use the Gnome version or whatever, what is actually installed is based entirely off of what is in ```/etc/nixos/configuration.nix```
