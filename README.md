@@ -29,7 +29,7 @@ There is no browser by default in the config. In the screenshot I am using QuteB
 
 Wallpapers are set with Nitrogen, restored in the Xmonad.hs file on startup. I have included only the apps used to get the config working out of the box.  
 
-Also to note, you may try and edit your config and go for the classic ```sudo nixos-rebuid switch``` and find that you cannot. Not to worry, your user should be set to do administrative tasks, just with ```doas```. Command ```sudo```` cannot be found.
+Also to note, you may try and edit your config and go for the classic ```sudo nixos-rebuid switch``` and find that you cannot. Not to worry, your user should be set to do administrative tasks, just with ```doas```. Command ```sudo``` cannot be found.
 
 
 There are also a few different XMobar configs included. Feel free to change between them by:
