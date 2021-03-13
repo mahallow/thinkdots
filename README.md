@@ -1,6 +1,6 @@
 # NixOS Dotfiles
 
-You have just funbled your config, tried to ```sudo pacman -Rns``` some font you weren't using, and you removed font manager, its time again to begin the Arch inst.... STOP! There is another way! If you're here, you are one for dotfiles. You might not think so, but I can see it in you. What if I told you, you could essentially dotfile your machine, with the continual ability to switch between changes on the fly.  
+You have just fumbled your config, tried to ```sudo pacman -Rns``` some font you weren't using, and you removed font manager, its time again to begin the Arch inst.... STOP! There is another way! If you're here, you are one for dotfiles. You might not think so, but I can see it in you. What if I told you, you could essentially dotfile your machine, with the continual ability to switch between changes on the fly.  
 
 In steps [NixOS](www.nixos.org) to solve your problems. The "do it yourself" distro for grownups. 
 
@@ -23,6 +23,16 @@ This is where things need to be improved. You can of course still copy or use th
 
 At this point you will have a functional install! To get anything to look normal though, once you reboot you will want to clone the repo again and put everything in your ```~/.home``` folder. Logout, back in and bam. 
 
+## General usage
+
+There is no browser by default in the config. In the screenshot I am using QuteBrowser, for which there are theme config files in the repo. You can either add that to the ```configuration.nix``` or ```nix-env -iA nixos.qutebrowser``` to make it for just your user. 
+
+Wallpapers are set with Nitrogen, restored in the Xmonad.hs file on startup. I have included only the apps used to get the config working out of the box.  
+
+There are also a few different XMobar configs included. Feel free to change between them by:
+1. ```rm .xmonad/xmobar/xmobarrc```
+2. ```ln -s {choose one} xmobarrc```
+3. Then recompile/restart XMonad with mod/super + Q
 
 Thats it for now!
 
