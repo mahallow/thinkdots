@@ -3,7 +3,7 @@ Config {
 -- Set font and default foreground/background colors. Note that
 -- the height of xmobar is controlled by the font you use.
 font = "xft:CozetteVector-9",
-bgColor = "black",
+bgColor = "#384240",
 fgColor = "grey",
 position = TopW L 100,
 commands = [
@@ -49,6 +49,7 @@ commands = [
 	Run Com "uname" ["-r"] "kernal" 0,
 	--Brightness
 	Run Com "brightnessctl" ["-d", "intel_backlight", "g"]  "mybright" 60,
+	Run Com "df" ["| grep nvme", "| awk '{pring $5}'"]  "disk" 60,
 	-- This line tells xmobar to read input from stdin. That's how we
 	-- get the information that xmonad is sending it for display.
 	Run StdinReader
@@ -63,6 +64,6 @@ alignSep = "}{",
 
 -- Overall template for the layout of the xmobar contents. Note that
 -- space is significant and can be used to add padding.
-template = "| %StdinReader% }{ %enp0s31f6%%wlp58s0% | <fc=#c5a900>%battery%</fc> | %cpu% | %memory% | Volume: %vol% | Lum: %mybright% | <fc=#e6744c>%date%</fc> | %kernal% | %note% "
+template = "| %StdinReader% }{ %enp0s31f6%%wlp58s0% | <fc=#c5a900>%battery%</fc> | %cpu% | %disk% | %memory% | Volume: %vol% | Lum: %mybright% | <fc=#e6744c>%date%</fc> | %kernal% | %note% "
 }
 

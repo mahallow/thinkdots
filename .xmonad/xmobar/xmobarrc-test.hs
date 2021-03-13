@@ -28,7 +28,7 @@ commands = [
 
 	-- Date formatting
 	--Run Date "%k:%M:%S" "date" 10,
-	Run DateZone "%a %d %b %Y - %H:%M:%S" "us_EN.UTC-8" "UTC" "date" 10,
+	Run DateZone "%a %d %b %Y - %H:%M:%S" "us_EN.UTC-8" "PST" "date" 10,
 
 	-- Battery information. This is likely to require some customization
 	-- based upon your specific hardware. Or, for a desktop you may want
@@ -63,6 +63,6 @@ alignSep = "}{",
 
 -- Overall template for the layout of the xmobar contents. Note that
 -- space is significant and can be used to add padding.
-template = "| %StdinReader% }{ %enp0s31f6%%wlp58s0% | <fc=#c5a900>%battery%</fc> | %cpu% | %memory% | Volume: %vol% | Lum: %mybright% | <fc=#e6744c>%date%</fc> | %kernal% | %note% "
+template = "| %StdinReader% }{ %enp0s31f6%%wlp58s0% | %battery% | %cpu% | %memory% | Volume: %vol% | Lum: %mybright% | <fc=#e6744c>%time%</fc> | %time% |  %kernal% | %note% "
 }
 

@@ -27,7 +27,7 @@ import XMonad.Util.WorkspaceCompare
 -- hooks
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks (avoidStruts, docksStartupHook, manageDocks, ToggleStruts(..))
-import XMonad.Hooks.EwmhDesktops -- to show workspaces in application switchers
+import XMonad.Hooks.EwmhDesktops -- to show workspaces in application switchers#9d9d9d
 import XMonad.Hooks.ManageHelpers (isFullscreen, isDialog,  doFullFloat, doCenterFloat, doRectFloat) 
 import XMonad.Hooks.Place (placeHook, withGaps)
 import XMonad.Hooks.UrgencyHook
@@ -53,8 +53,8 @@ import XMonad.Layout.Gaps
 myModMask = mod4Mask -- Sets modkey to super/windows key
 myTerminal = "kitty" -- Sets default terminal
 myBorderWidth = 1 -- Sets border width for windows
-myNormalBorderColor = "#839496"
-myFocusedBorderColor = "#268BD2"
+myNormalBorderColor = "#34495e"
+myFocusedBorderColor = "#9d9d9d"
 myppCurrent = "#cb4b16"
 myppVisible = "#cb4b16"
 myppHidden = "#268bd2"
@@ -67,16 +67,16 @@ windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace
 ------------------------------------------------------------------------
 -- desktop notifications -- dunst package required
 ------------------------------------------------------------------------
-
+ 
 data LibNotifyUrgencyHook = LibNotifyUrgencyHook deriving (Read, Show)
-
+ 
 instance UrgencyHook LibNotifyUrgencyHook where
     urgencyHook LibNotifyUrgencyHook w = do
         name     <- getName w
         Just idx <- fmap (W.findTag w) $ gets windowset
-
+ 
         safeSpawn "notify-send" [show name, "workspace " ++ idx]
-
+ 
 ------------------------------------------------------------------------
 -- Startup hook
 ------------------------------------------------------------------------

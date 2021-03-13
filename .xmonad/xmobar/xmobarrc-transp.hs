@@ -27,7 +27,7 @@ Config {
 
     font        = "xft:CozetteVector:size=9:style=Regular"
   , bgColor     = "#282a2e"
-  , fgColor     = "#c5c8c6"
+  , fgColor     = "#e9eced"
   , alpha       = 0
   , position    = Top
   , border      = NoBorder
@@ -63,8 +63,8 @@ Config {
                        , "--on-icon-pattern"   , "<icon=battery/on/battery_on_%%.xpm/>"
                        , "--off-icon-pattern"  , "<icon=battery/off/battery_off_%%.xpm/>"
                        , "--idle-icon-pattern" , "<icon=battery/idle/battery_idle_%%.xpm/>"
-                       , "-o" , "<left><fc=#c5c8c6>%</fc> <timeleft>" -- discharging status
-                       , "-O" , "<left><fc=#c5c8c6>% <timeleft></fc>" -- plugged in status
+                       , "-o" , "<left><fc=#e9eced>%</fc> <timeleft>" -- discharging status
+                       , "-O" , "<left><fc=#e9eced>% <timeleft></fc>" -- plugged in status
                        , "-i" , "<fc=#707880>IDLE</fc>"               -- charged status
                      ] 50
 
