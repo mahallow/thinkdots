@@ -130,7 +130,6 @@
    # Window Management
     rofi
     autorandr
-    pkgs.lxappearance
     xmobar
     nitrogen
    # System Applications
@@ -143,7 +142,6 @@
     brightnessctl
    # File management
     pkgs.ranger
-    pkgs.gnome3.nautilus
     pkgs.gitAndTools.gitFull
     pkgs.zathura
     unzip
