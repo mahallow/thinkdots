@@ -123,7 +123,6 @@
    };
 
   # List packages installed in system profile.
-    nixpkgs.config.allowUnfree = true;
     environment.systemPackages = with pkgs; [
     wget
     vim
