@@ -117,9 +117,9 @@
       };
 
   # Set Fish as shell
-   programs.fish.enable = true;
+   programs.zsh.enable = true;
    users.users.liam = {
-   shell = pkgs.fish;
+   shell = pkgs.zsh;
    };
 
   # List packages installed in system profile.
@@ -141,8 +141,8 @@
     pciutils
     brightnessctl
    # File management
-    pkgs.ranger
     pkgs.gitAndTools.gitFull
+    pkgs.lf
     pkgs.zathura
     unzip
     feh
