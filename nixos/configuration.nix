@@ -1,4 +1,4 @@
-# Welcome to the Liam NixOS config that is becoming less stock with awesomewm jammed in
+# Welcome to the official Liam NixOS config with XMonad
 { config, pkgs, ... }:
 
 {
