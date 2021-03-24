@@ -5,16 +5,18 @@ programs.home-manager.enable = true;
 programs.bat.enable = true;
 
 home.packages = with pkgs; [
+   #system 
 	cmus
-	brave
 	pulsemixer
+	sutils
+	qemu
+	virt-manager
+   #Browsers
+	brave
+	qutebrowser
 	nyxt
 	youtube-dl
 	texlive.combined.scheme-full
-	sutils
-	qutebrowser
-	qemu
-	virt-manager
 	i3lock-fancy-rapid
 	mpv-with-scripts
 	sc-im
