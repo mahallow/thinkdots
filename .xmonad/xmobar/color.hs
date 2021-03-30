@@ -34,5 +34,5 @@ Config { font = "xft:CozetteVector:pixelsize=12:antialias=true:hinting=true"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " <icon=haskell_20.xpm/> swagger <fc=#666666>|</fc> %UnsafeStdinReader% }{ | Volume: %vol% | <fc=#FFB86C>%cpu%</fc> | <fc=#FF5555>%memory%</fc> | <fc=#82AAFF>%disku%</fc> | <fc=#c3e88d>%wlp58s0%</fc> | <fc=#c5a900>%battery%</fc> | <fc=#e5e5e5>Lum: %mybright%</fc> |  <fc=#8BE9FD>%date%</fc> | <fc=#82AAFF>%uname%</fc> "
+       , template = " <icon=haskell_20.xpm/> <fc=#c3e88d>swag</fc> <fc=#666666>|</fc> %UnsafeStdinReader% }{ | Vol: %vol% | <fc=#FFB86C>%cpu%</fc> | <fc=#FF5555>%memory%</fc> | <fc=#82AAFF>%disku%</fc> | <fc=#c3e88d>%wlp58s0%</fc> | <fc=#c5a900>%battery%</fc> | <fc=#e5e5e5>Lum: %mybright%</fc> |  <fc=#8BE9FD>%date%</fc> | <fc=#82AAFF>%uname%</fc> "
        }

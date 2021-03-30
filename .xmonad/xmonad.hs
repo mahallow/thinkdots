@@ -39,6 +39,7 @@ import XMonad.Actions.UpdatePointer -- update mouse postion
 -- layout 
 import XMonad.Layout.Renamed (renamed, Rename(Replace))
 import XMonad.Layout.NoBorders
+import XMonad.Layout.LayoutModifier
 import XMonad.Layout.Spacing
 import XMonad.Layout.Tabbed
 import XMonad.Layout.GridVariants
@@ -54,6 +55,7 @@ myModMask = mod4Mask -- Sets modkey to super/windows key
 myTerminal = "kitty" -- Sets default terminal
 myBorderWidth = 1 -- Sets border width for windows
 myNormalBorderColor = "#34495e"
+
 myFocusedBorderColor = "#9d9d9d"
 myppCurrent = "#cb4b16"
 myppVisible = "#cb4b16"
@@ -61,7 +63,7 @@ myppHidden = "#268bd2"
 myppHiddenNoWindows = "#93A1A1"
 myppTitle = "#FDF6E3"
 myppUrgent = "#DC322F"
-myWorkspaces = ["web","dev","set","doc","vim","sil","test", "com", "fin"]
+myWorkspaces = ["1","2","3","4","5","6","7", "8", "9"]
 windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
 
 ------------------------------------------------------------------------
@@ -88,27 +90,36 @@ myStartupHook = do
 ------------------------------------------------------------------------
 -- layout
 ------------------------------------------------------------------------
-
+-- spacing maybe?
+mySpacing :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spacing l a
+mySpacing i = spacingRaw False (Border i i i i) True (Border i i i i) True
+mySpacing' :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spacing l a
+mySpacing' i = spacingRaw True (Border i i i i) True (Border i i i i) True
+-- end spacing
 myLayout = avoidStruts (tiled ||| grid ||| bsp ||| simpleTabbed) 
   where
      -- full
-     full = renamed [Replace "Full"] 
-          $ spacingRaw True (Border 10 0 10 0) True (Border 0 10 0 10) True 
-          $ noBorders (Full)
+     -- full = renamed [Replace "Full"] 
+          -- $ spacingRaw True (Border 10 0 10 0) True (Border 0 10 0 10) True 
+	 -- $ mySpacing 8
+         -- $ noBorders (Full)
 
      -- tiled
      tiled = renamed [Replace "Tall"] 
-           $ spacingRaw True (Border 10 0 10 0) True (Border 0 10 0 10) True 
+          -- $ spacingRaw True (Border 10 0 10 0) True (Border 0 10 0 10) True 
+	   $ mySpacing 8
            $ ResizableTall 1 (3/100) (1/2) []
 
      -- grid
      grid = renamed [Replace "Grid"] 
           $ spacingRaw True (Border 10 0 10 0) True (Border 0 10 0 10) True 
+	  $ mySpacing 8
           $ Grid (16/10)
 	  -- $ myGaps
      -- bsp
      bsp = renamed [Replace "BSP"] 
-         $ spacingRaw True (Border 10 0 10 0) True (Border 0 10 0 10) True 
+         -- $ spacingRaw True (Border 10 0 10 0) True (Border 0 10 0 10) True 
+	 $ mySpacing 8
          $ emptyBSP
 
      -- The default number of windows in the master pane
@@ -153,6 +164,8 @@ myKeys =
      , ("M-g", sendMessage $ JumpToLayout "Grid")
      , ("M-b", sendMessage $ JumpToLayout "BSP")
      , ("M-,", spawn "rofi -show drun") -- rofi
+     , ("M-e", sendMessage $ ToggleGaps)  -- toggle all gaps
+
      , ("M-k", spawn "kitty") -- rofi
      , ("M-u", spawn "kitty vifm") -- rofi
      , ("M-o", spawn "qutebrowser") -- rofi

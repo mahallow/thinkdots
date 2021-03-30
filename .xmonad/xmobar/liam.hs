@@ -3,9 +3,9 @@ Config {
 -- Set font and default foreground/background colors. Note that
 -- the height of xmobar is controlled by the font you use.
 font = "xft:CozetteVector-9",
-bgColor = "#384240",
+bgColor = "#lelele",
 fgColor = "grey",
-position = TopW L 100,
+position = Bottom 100,
 commands = [
 	-- Gather and format CPU usage information.
 	-- If it's above 70%, we consider it high usage and make it red.

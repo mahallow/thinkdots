@@ -1,7 +1,7 @@
 
-xmonad.hs:108:1: warning: [-Wtabs]
-    Tab character found here.
+xmonad.hs:104:1: warning: [-Wtabs]
+    Tab character found here, and in four further locations.
     Please use spaces instead.
     |
-108 |           -- $ myGaps
+104 |          -- $ mySpacing 8
     | ^^^^^^^^

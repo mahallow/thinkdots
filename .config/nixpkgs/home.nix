@@ -5,11 +5,12 @@ programs.home-manager.enable = true;
 programs.bat.enable = true;
 programs.neovim = {
 	enable = true;
+        vimAlias = true;
         extraConfig = ''
             set t_Co=256
             set paste
             set number relativenumber
-            colorscheme gruvbox
+            colorscheme OceanicNext 
             set ignorecase
             set smartcase
             set mouse=a
@@ -22,7 +23,9 @@ programs.neovim = {
 	vim-nix
 	vim-pandoc
         multiple-cursors
-	gruvbox
+        oceanic-next
+        gruvbox
+        molokai
 	vim-airline
 	vim-surround
 	nerdtree
@@ -45,8 +48,8 @@ home.packages = with pkgs; [
 	nyxt
    #TUI Utils
 	youtube-dl
-	pywal
 	fontpreview
+        newsboat
 	cmus
 	texlive.combined.scheme-full
 	i3lock-fancy-rapid
