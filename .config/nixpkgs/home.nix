@@ -10,7 +10,7 @@ programs.neovim = {
             set t_Co=256
             set paste
             set number relativenumber
-            colorscheme OceanicNext 
+            colorscheme gruvbox 
             set ignorecase
             set smartcase
             set mouse=a
@@ -40,6 +40,7 @@ home.packages = with pkgs; [
    #system 
 	pulsemixer
 	sutils
+        dmenu
 	qemu
 	virt-manager
    #Browsers
