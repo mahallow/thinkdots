@@ -3,9 +3,9 @@ Config {
 -- Set font and default foreground/background colors. Note that
 -- the height of xmobar is controlled by the font you use.
 font = "xft:CozetteVector-9",
-bgColor = "#lelele",
+bgColor = "#002626",
 fgColor = "grey",
-position = Bottom 100,
+position = BottomW C 90,
 commands = [
 	-- Gather and format CPU usage information.
 	-- If it's above 70%, we consider it high usage and make it red.
@@ -49,7 +49,7 @@ commands = [
 	Run Com "uname" ["-r"] "kernal" 0,
 	--Brightness
 	Run Com "brightnessctl" ["-d", "intel_backlight", "g"]  "mybright" 60,
-	Run Com "df" ["| grep nvme", "| awk '{pring $5}'"]  "disk" 60,
+	Run Com "df" ["grep nvme", "awk '{pring $5}'"]  "disk" 60,
 	-- This line tells xmobar to read input from stdin. That's how we
 	-- get the information that xmonad is sending it for display.
 	Run StdinReader

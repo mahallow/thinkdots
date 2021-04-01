@@ -113,7 +113,7 @@ myLayout = avoidStruts (tiled ||| grid ||| bsp ||| simpleTabbed)
      -- grid
      grid = renamed [Replace "Grid"] 
           $ spacingRaw True (Border 10 0 10 0) True (Border 0 10 0 10) True 
-	  $ mySpacing 8
+	  $ mySpacing 15
           $ Grid (16/10)
 	  -- $ myGaps
      -- bsp
