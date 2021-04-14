@@ -107,7 +107,7 @@ myLayout = avoidStruts (tiled ||| grid ||| bsp ||| simpleTabbed)
      -- tiled
      tiled = renamed [Replace "Tall"] 
           -- $ spacingRaw True (Border 10 0 10 0) True (Border 0 10 0 10) True 
-	   $ mySpacing 8
+	   $ mySpacing 6
            $ ResizableTall 1 (3/100) (1/2) []
 
      -- grid
@@ -174,6 +174,7 @@ myKeys =
      , ("<XF86MonBrightnessDown>", spawn "brightnessctl -d intel_backlight set 300-") -- rofi
      , ("<XF86AudioLowerVolume>", spawn "amixer set Master 5%- unmute") -- rofi
      , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 5%+ unmute") -- rofi
+     , ("<XF86AudioMute>", spawn "amixer sset Master toggle") -- rofi
      , ("S-M-t", withFocused $ windows . W.sink) -- flatten floating window to tiled
     ]
     
