@@ -25,6 +25,8 @@ At this point you will have a functional install! To get anything to look normal
 
 ## General usage
 
+Right now I am working my way through learning how 'home-manager' works and how it can be used in conjunction with the installation process and setup you see here. There are other applications or files that may be added to the repo without much explination and they likely related to this. Once I figure out a clean way to define this in the overall 'configuration.nix' I will make the appropiate changes and explain here. 
+
 There is no browser by default in the config. In the screenshot I am using QuteBrowser, for which there are theme config files in the repo. You can either add that to the ```configuration.nix``` or ```nix-env -iA nixos.qutebrowser``` to make it for just your user. 
 
 Wallpapers are set with Nitrogen, restored in the Xmonad.hs file on startup. I have included only the apps used to get the config working out of the box.  
