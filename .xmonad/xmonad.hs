@@ -175,6 +175,7 @@ myKeys =
      , ("<XF86AudioLowerVolume>", spawn "amixer set Master 5%- unmute") -- rofi
      , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 5%+ unmute") -- rofi
      , ("<XF86AudioMute>", spawn "amixer sset Master toggle") -- rofi
+     , ("<XF86AudioMicMute>", spawn "amixer sset Capture toggle") -- rofi
      , ("S-M-t", withFocused $ windows . W.sink) -- flatten floating window to tiled
     ]
     
