@@ -13,7 +13,7 @@ commands = [
 	Run Cpu [
 	"-L", "3",
 	"-H", "70",
-	"--normal", "green",
+	"--normal", "#98971a",
 	"--high","red"
 	]
 	100,
@@ -64,6 +64,6 @@ alignSep = "}{",
 
 -- Overall template for the layout of the xmobar contents. Note that
 -- space is significant and can be used to add padding.
-template = " | %StdinReader% }{ %enp0s31f6%%wlp58s0% | <fc=#c5a900>%battery%</fc> | %cpu% | %memory% | Vol: %vol% | Lum: %mybright% | %disku% | <fc=#e6744c>%date%</fc> | %kernal% | %note% | "
+template = " | %StdinReader% }{ %enp0s31f6%%wlp58s0% | <fc=#c5a900>%battery%</fc> | %cpu% | %memory% | Vol: %vol% | <fc=#98971a>%disku%</fc> | Lum: %mybright% | <fc=#e6744c>%date%</fc> | %kernal% | %note% | "
 }
 
