@@ -29,7 +29,7 @@ commands = [
 
 	-- Date formatting
 	--Run Date "%k:%M:%S" "date" 10,
-	Run DateZone "%a %d %b %Y - %H:%M:%S" "us_EN.UTC-8" "UTC" "date" 10,
+	Run Date "%a %d %b %Y - %H:%M:%S" "date" 10,
 
 	-- Battery information. This is likely to require some customization
 	-- based upon your specific hardware. Or, for a desktop you may want
