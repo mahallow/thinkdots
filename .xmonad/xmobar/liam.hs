@@ -26,7 +26,7 @@ commands = [
 	Run Memory [
 	"-t","Mem: <usedratio>%"
 	] 100,
-
+	Run DiskU [("/", "hdd <usedbar> (<used>)")] [] 3600,
 	-- Date formatting
 	--Run Date "%k:%M:%S" "date" 10,
 	Run Date "%a %d %b %Y - %H:%M:%S" "date" 10,
@@ -64,6 +64,6 @@ alignSep = "}{",
 
 -- Overall template for the layout of the xmobar contents. Note that
 -- space is significant and can be used to add padding.
-template = " | %StdinReader% }{ %enp0s31f6%%wlp58s0% | <fc=#c5a900>%battery%</fc> | %cpu% | %memory% | Volume: %vol% | Lum: %mybright% | <fc=#e6744c>%date%</fc> | %kernal% | %note% | "
+template = " | %StdinReader% }{ %enp0s31f6%%wlp58s0% | <fc=#c5a900>%battery%</fc> | %cpu% | %memory% | Vol: %vol% | Lum: %mybright% | %disku% | <fc=#e6744c>%date%</fc> | %kernal% | %note% | "
 }
 
