@@ -1,10 +1,8 @@
-
 Config {
 -- Set font and default foreground/background colors. Note that
 -- the height of xmobar is controlled by the font you use.
 font = "xft:CozetteVector-9",
 bgColor = "black",
--- bgColor = "#220808",
 fgColor = "grey",
 position = BottomW C 80,
 commands = [
@@ -64,6 +62,6 @@ alignSep = "}{",
 
 -- Overall template for the layout of the xmobar contents. Note that
 -- space is significant and can be used to add padding.
-template = " | %StdinReader% }{ %enp0s31f6%%wlp58s0% | <fc=#c5a900>%battery%</fc> | %cpu% | %memory% | Vol: %vol% | <fc=#458588>%disku%</fc> | Lum: %mybright% | <fc=#e6744c>%date%</fc> | %kernal% | %note% | "
+template = " | %StdinReader% }{ %enp0s31f6%%wlp58s0% | <fc=#d79921>%battery%</fc> | %cpu% | %memory% | Vol: %vol% | <fc=#458588>%disku%</fc> | Lum: %mybright% | <fc=#e6744c>%date%</fc> | %kernal% | %note% | "
 }
 

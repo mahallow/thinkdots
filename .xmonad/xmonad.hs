@@ -98,12 +98,6 @@ mySpacing' i = spacingRaw True (Border i i i i) True (Border i i i i) True
 -- end spacing
 myLayout = avoidStruts (tiled ||| grid ||| bsp ||| simpleTabbed) 
   where
-     -- full
-     -- full = renamed [Replace "Full"] 
-          -- $ spacingRaw True (Border 10 0 10 0) True (Border 0 10 0 10) True 
-	 -- $ mySpacing 8
-         -- $ noBorders (Full)
-
      -- tiled
      tiled = renamed [Replace "Tall"] 
           -- $ spacingRaw True (Border 10 0 10 0) True (Border 0 10 0 10) True 
@@ -115,10 +109,8 @@ myLayout = avoidStruts (tiled ||| grid ||| bsp ||| simpleTabbed)
           $ spacingRaw True (Border 10 0 10 0) True (Border 0 10 0 10) True 
 	  $ mySpacing 15
           $ Grid (16/10)
-	  -- $ myGaps
      -- bsp
      bsp = renamed [Replace "BSP"] 
-         -- $ spacingRaw True (Border 10 0 10 0) True (Border 0 10 0 10) True 
 	 $ mySpacing 8
          $ emptyBSP
 
