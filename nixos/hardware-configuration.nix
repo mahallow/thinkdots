@@ -11,11 +11,10 @@
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
-  virtualisation.libvirtd.enable = true;
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/d35ccb32-b659-44aa-8f95-fce069d34b37";
+    { device = "/dev/disk/by-uuid/35b4c54f-45b7-435b-aa91-534a95811bfb";
       fsType = "ext4";
     };
 

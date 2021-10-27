@@ -42,6 +42,7 @@
 	enable = true;
  	coreOffset = -50; 
 	};
+  services.thinkfan.enable = true;
 
  # Splash screen
   boot.plymouth.enable = true;
@@ -93,10 +94,12 @@
     services.picom = {
        enable = true;
        fade = true; 
-       #inactiveOpacity = 1;
        shadow = true;
        fadeDelta = 1; 
-       vSync = true;
+       settings = {
+          corner-radius = 10;
+          };
+       vSync = false;
       };
     services.xserver.enable = true;
     services.xserver.displayManager.gdm = {
@@ -116,7 +119,7 @@
 	  ];
       };
 
-  # Set Fish as shell
+  # Set ZSH as shell
    programs.zsh.enable = true;
    users.users.liam = {
    shell = pkgs.zsh;
@@ -133,19 +136,18 @@
     nitrogen
    # System Applications
     pkgs.kitty
-    pkgs.python39
     xorg.xmodmap
-    gotop
     pkgs.arandr
     pciutils
+    gotop
     brightnessctl
    # File management
     pkgs.gitAndTools.gitFull
-    pkgs.lf
     pkgs.zathura
     unzip
     feh
    # Misc
+    qutebrowser
     scrot
     pfetch
    ];

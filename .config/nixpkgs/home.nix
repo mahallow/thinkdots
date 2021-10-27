@@ -17,6 +17,8 @@ programs.neovim = {
             set noswapfile
             let NERDTreeShowHidden = 1
             map<F7> :NERDTree <CR>
+            map <C-g> :Goyo <CR>
+            set cursorline
           '';
 
 	plugins = with pkgs.vimPlugins; [
@@ -24,6 +26,7 @@ programs.neovim = {
 	vim-pandoc
         multiple-cursors
         oceanic-next
+	goyo
         gruvbox
         molokai
 	vim-airline
@@ -33,7 +36,7 @@ programs.neovim = {
   };
 
 home.sessionVariables = {
-	EDITOR = "vim";
+	EDITOR = "nvim";
   };
 
 home.packages = with pkgs; [
@@ -43,13 +46,14 @@ home.packages = with pkgs; [
         dmenu
 	qemu
 	virt-manager
+        python3Minimal
    #Browsers
 	brave
-	qutebrowser
 	nyxt
    #TUI Utils
 	youtube-dl
 	fontpreview
+        ranger
         newsboat
 	cmus
 	texlive.combined.scheme-full
@@ -59,6 +63,9 @@ home.packages = with pkgs; [
 	pandoc
    #Other
 	obs-studio
+        kdenlive
+        gimp
+        inkscape
   ];
 
 }
