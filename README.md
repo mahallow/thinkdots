@@ -6,7 +6,7 @@ In steps [NixOS](www.nixos.org) to solve your problems. The "do it yourself" dis
 
 This is some XMonad on some ThinkPad. 
 
-![xmonad](https://raw.githubusercontent.com/mahallow/thinkdots/master/scrots/screen2.png) 
+![xmonad](https://raw.githubusercontent.com/mahallow/thinkdots/master/scrots/new.png) 
 ![update](https://heinicke.xyz/nixos/comf.png)
 
 # Installation & Details
