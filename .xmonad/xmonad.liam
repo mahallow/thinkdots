@@ -53,7 +53,7 @@ import XMonad.Layout.Gaps
 --myGaps = gaps [(U, gap),(D, gap),(L, gap),(R, gap)]
 myModMask = mod4Mask -- Sets modkey to super/windows key
 myTerminal = "kitty" -- Sets default terminal
-myBorderWidth = 0 -- Sets border width for windows
+myBorderWidth = 1 -- Sets border width for windows
 myNormalBorderColor = "#34495e"
 
 myFocusedBorderColor = "#9d9d9d"
@@ -163,7 +163,7 @@ myKeys =
      , ("M-e", sendMessage $ ToggleGaps)  -- toggle all gaps
 
      , ("M-;", spawn "kitty") -- rofi
-     , ("M-u", spawn "kitty ranger") -- ranger
+     , ("M-u", spawn "kitty vifm") -- rofi
      , ("M-o", spawn "qutebrowser") -- rofi
      , ("M-S-l", spawn "i3lock-fancy-rapid 8 3") -- lockscreen
      , ("<XF86MonBrightnessUp>", spawn "brightnessctl -d intel_backlight set +300") -- rofi
