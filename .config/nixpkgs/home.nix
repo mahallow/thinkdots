@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 
+
 {
 programs.home-manager.enable = true;
 programs.bat.enable = true;
@@ -10,7 +11,7 @@ programs.neovim = {
             set t_Co=256
             set paste
             set number relativenumber
-            colorscheme gruvbox 
+            colorscheme iceberg 
             set ignorecase
             set smartcase
             set mouse=a
@@ -28,6 +29,7 @@ programs.neovim = {
         oceanic-next
 	goyo
         gruvbox
+        awesome-vim-colorschemes
         molokai
 	vim-airline
 	vim-surround
