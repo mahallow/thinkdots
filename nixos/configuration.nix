@@ -74,11 +74,13 @@
   sound.enable = true;
   hardware.pulseaudio.enable = true;
   sound.mediaKeys.enable = true;
+  services.pipewire.jack.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.liam = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    initialPassword = "dingus";
   };
 
   # Enable doas instead of sudo
@@ -108,6 +110,7 @@
 	};
 
 
+    # services.xserver.desktopManager.cinnamon.enable = true;
 
   # Enable XMonad
     services.xserver.windowManager.xmonad = {
@@ -126,12 +129,15 @@
    };
 
   # List packages installed in system profile.
+    programs.neovim.defaultEditor = true;
+    nixpkgs.config.allowUnfree = true;
     environment.systemPackages = with pkgs; [
     wget
     vim
    # Window Management
     rofi
     autorandr
+    lxappearance
     xmobar
     nitrogen
    # System Applications
@@ -163,10 +169,10 @@
 
  # NixOS Configuration 
   system.stateVersion = "20.09"; # Did you read the comment?
-  #system.autoUpgrade = {
-  #     enable = true;
-  #     channel = https://nixos.org/channels/nixos-unstable;
-  #     };
+  system.autoUpgrade = {
+       enable = true;
+       channel = https://nixos.org/channels/nixos-unstable;
+      };
 
 }
 
